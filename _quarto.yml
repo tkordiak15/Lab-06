@@ -1,0 +1,7 @@
+project: 
+  title: "csu-ess-330-lab6"
+  output-dir: docs
+  type: website
+format: 
+  html:
+    self-contained: true
