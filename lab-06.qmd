@@ -310,7 +310,7 @@ recipe2 <- recipe(logQmean ~ aridity + p_mean + elev_mean, data = camels_train) 
   step_naomit(all_predictors(), all_outcomes())
 
 ```
-#I decided to use aridity, mean precipitation, and mean elevation of the catchment, I feel liek these willbe goof to use in the model because to me they should play a big part in predicting mean streamflow from this dataset. 
+#I decided to use aridity, mean precipitation, and mean elevation of the catchment, I feel like these willbe goof to use in the model because to me they should play a big part in predicting mean streamflow from this dataset. 
 
 #defining three different models
 ```{r}

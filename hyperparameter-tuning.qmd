@@ -1,0 +1,330 @@
+---
+title: "Untitled"
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(tidymodels)
+library(powerjoin)
+library(glue)
+library(vip)
+```
+
+#loading data
+```{r}
+root <- 'https://gdex.ucar.edu/dataset/camels/file'
+download.file('https://gdex.ucar.edu/dataset/camels/file/camels_attributes_v2.0.pdf', 
+              'data/camels_attributes_v2.0.pdf')
+types <- c("clim", "geol", "soil", "topo", "vege", "hydro")
+remote_files <- glue('{root}/camels_{types}.txt')
+local_files <- glue('data/camels_{types}.txt')
+
+walk2(remote_files, local_files, download.file, quite = TRUE)
+
+camels <- map(local_files, read_delim, show_col_types = FALSE)
+
+camel <- power_full_join(camels ,by = "gauge_id") %>% mutate(gauge_id = as.numeric(gauge_id))
+```
+#libraries
+```{r}
+library(dplyr)
+library(tidyr)
+library(skimr)
+library(visdat)
+library(ggpubr)
+```
+
+
+```{r}
+camels_clean2 <- camel %>%
+  filter(complete.cases(select(., aridity, p_mean, q_mean))) %>%
+  select(aridity, p_mean, q_mean, gauge_lat, gauge_lon)
+
+```
+
+
+```{r}
+skim(camels_clean2)
+vis_miss(camels_clean2)
+```
+
+#data splitting
+```{r}
+library(rsample)
+set.seed(123)
+```
+```{r}
+
+camels_split <- initial_split(camels_clean2, prop = 0.8)
+camels_train <- training(camels_split)
+camels_test <- testing(camels_split)
+```
+
+```{r}
+dim(camels_train)
+dim(camels_test)
+```
+
+
+#feature engineering and removing gauge_lon and lat
+```{r}
+library(recipes)
+camels_recipe2 <- recipe(q_mean ~ aridity + p_mean, data = camels_train) %>%
+  step_log(all_numeric_predictors(), base = 10) %>%
+  step_naomit(all_predictors(), all_outcomes())
+
+
+summary(camels_train)
+```
+
+##resamples and model testing
+#build 3 candidates models
+```{r}
+library(parsnip)
+library(rsample)
+camels_cv <- vfold_cv(camels_train, v = 10, strata = "q_mean")
+```
+
+
+```{r}
+library(ranger)
+library(xgboost)
+
+linear_mod <- linear_reg() %>%
+  set_engine("lm") %>%
+  set_mode("regression")
+
+rf_mod <- rand_forest(mtry = 2, trees = 500) %>%
+  set_engine("ranger") %>%
+  set_mode("regression")
+
+boosted_mod <- boost_tree(trees = 1000,
+                        tree_depth = 6,
+                        min_n = 10) %>%
+  set_engine("xgboost") %>%
+  set_mode("regression")
+```
+#test the models
+```{r}
+library(workflows)
+library(workflowsets)
+library(tune)
+library(yardstick)
+
+model_workflows <- workflow_set(
+  preproc = list(camels_recipe2),
+  models = list(
+    linear = linear_mod,
+    random_forest = rf_mod,
+    xgboost = boosted_mod
+  )
+)
+```
+
+```{r}
+model_results <- model_workflows %>%
+  workflow_map("fit_resamples", resamples = camels_cv)
+```
+```{r}
+autoplot(model_results)
+```
+
+
+```{r}
+collect_metrics(model_results)
+```
+
+#Model selection
+#I will be using the random forest, the reason I'm picking it is because it is highly ranked within the graph and the lowest rmse (0.51) and the highest rsq (0.89) which is what we are looking for in best performing models. 
+# The random forest model helps when there are lots of different trees and complies one with averaged results. the engine "ranger"  and in "regression" mode works because there is an already strong correlation to q-mean and the predictors. 
+
+##Model Tuning
+```{r}
+rf_model_tune <- rand_forest(
+  mode = "regression",
+  mtry = tune(),
+  min_n = tune()
+) %>%
+  set_engine("ranger") %>%
+  set_mode("regression")
+```
+
+```{r}
+library(dials)
+```
+#check turntable values/ranges and create workflow
+```{r}
+rf_grid <- grid_regular(
+  mtry(range = c(1, 5)),
+  min_n(range = c(2, 10)),
+  levels = 5
+)
+rf_grid
+```
+#tuning 1
+```{r}
+rf_workflow <- workflow() %>%
+  add_recipe(camels_recipe2) %>%
+  add_model(rf_model_tune)
+
+rf_tune_results <- rf_workflow %>%
+  tune_grid(
+    resamples = camels_cv,
+    grid = rf_grid
+  )
+
+autoplot(rf_tune_results)
+```
+#tuning 2
+```{r}
+rf_workflow <- workflow() %>%
+  add_recipe(camels_recipe2) %>%
+  add_model(rf_model_tune)
+
+rf_workflow
+```
+
+
+#define the search space/dials
+```{r}
+library(dials)
+
+dials <- extract_parameter_set_dials(rf_workflow)
+
+dials <- update(dials, mtry = mtry(range = c(1, 10)))
+
+dials <- update(dials, min_n = min_n(range = c(2, 15)))
+
+my_grid <- grid_space_filling(dials, size = 25)
+
+dials
+```
+```{r}
+dials <- extract_parameter_set_dials(rf_workflow)
+dials
+```
+```{r}
+dials$object
+```
+#4
+```{r}
+dials <- extract_parameter_set_dials(rf_workflow)
+
+dials <- finalize(dials, camels_train)
+
+my.grid <- grid_space_filling(dials, size = 25)
+
+my.grid
+```
+#tuning my model
+```{r}
+model_params <- tune_grid(
+  rf_workflow,
+  resamples = camels_cv,
+  grid = my.grid,
+  metrics = metric_set(rmse, rsq, mae),
+  control = control_grid(save_pred = TRUE)
+)
+```
+```{r}
+autoplot(model_params)
+```
+
+
+# I can see six different graphs, one shows the rmse, rsq, and mae with randomly selected predictors and minimal node size as the x-axis. mae and rmse are failry similar with no outliers which is what we're looking for. proving that the model was a good choice because of less outliers and consistancy. 
+
+#Check the skill of the tuned model
+```{r}
+model_params %>% collect_metrics()
+
+model_params %>%
+  show_best(metric = "mae")
+
+hp_best <- select_best(model_params, metric = "mae")
+
+hp_best
+```
+# the first row shows the best performing model has a mtry = 5 and a min_n = 22, meaning the model selected 5 random predictors and needed 10  data points to split a node, with an average mean of 0.312 and our predictions are off by that much. lower means leads to a better performing model. 
+
+#finalized model
+
+```{r}
+final_workflow <- finalize_workflow(rf_workflow, hp_best)
+
+print(final_workflow)
+
+final_fit <- last_fit(final_workflow, camels_split)
+
+final_metrics <- collect_metrics(final_fit)
+final_metrics
+```
+# the results show a dinal rmse of 0.401 and a rsq of 0.920. Lower rmse means that the predicted values are close to actual values and a high rsq means that 92% of varablitly in the test data, these are great results showing a strong model choice. 
+```{r}
+final_predictions <- collect_predictions(final_fit)
+final_predictions
+```
+```{r}
+library(ggplot2)
+
+ggplot(final_predictions, aes(x = .pred, y = q_mean)) +
+  geom_point(aes(color = "purple"), alpha = 0.6) +
+  geom_smooth(method = "lm", color = "pink", se = FALSE) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "black") +
+  scale_color_manual(values = c("blue")) +
+  labs(
+    title = "Predicted vs Actual Values",
+    x = "Predicted Streamflow (q_mean)",
+    y = "Actual Streamflow (q_mean)",
+    caption = "Red line: Linear fit"
+  ) +
+  theme_minimal()
+```
+
+#map building
+```{r}
+final_model <- fit(final_workflow, data = camels_clean)
+predictions <- augment(final_model, camels_clean)
+
+predictions <- predictions %>%
+  mutate(residuals = .pred - q_mean)
+
+head(predictions)
+```
+#predicted map
+```{r}
+library(ggplot2)
+library(ggpubr)
+
+pred_map <- ggplot(predictions, aes(x = gauge_lon, y = gauge_lat, color = .pred)) + borders("state", colour = "black", fill = NA) +
+  geom_point(alpha = 0.6) +
+  scale_color_viridis_c(option = "C") +
+  labs(title = "Predicted Streamflow (q_mean)", color = "Predicted Value") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+print(pred_map)
+```
+
+#residual map
+```{r}
+resid_map <- ggplot(predictions, aes(x = gauge_lon, y = gauge_lat, color = residuals)) + borders("state", colour = "black", fill = NA) +
+  geom_point(alpha = 0.6) +
+  scale_color_viridis_c(option = "C") +
+  labs(title = "Residuals of Predictions (Predicted - Actual)", color = "Residuals") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+print(resid_map)
+```
+
+#combined maps 
+```{r}
+library(patchwork)
+
+combined_map <- pred_map + resid_map +
+  plot_layout(ncol = 2, heights = c(6, 6))
+
+print(combined_map)
+```
+
