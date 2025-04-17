@@ -283,8 +283,8 @@ ggplot(final_predictions, aes(x = .pred, y = q_mean)) +
 
 #map building
 ```{r}
-final_model <- fit(final_workflow, data = camels_clean)
-predictions <- augment(final_model, camels_clean)
+final_model <- fit(final_workflow, data = camels_clean2)
+predictions <- augment(final_model, camels_clean2)
 
 predictions <- predictions %>%
   mutate(residuals = .pred - q_mean)
