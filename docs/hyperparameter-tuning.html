@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Untitled – csu-ess-330-lab6</title>
+<title>Lab-08 – csu-ess-330-lab6</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4747,7 +4747,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Untitled</h1>
+<h1 class="title">Lab-08</h1>
 </div>
 
 
@@ -4794,7 +4794,7 @@ vertical-align: -.125em;
 ✖ dplyr::lag()      masks stats::lag()
 ✖ yardstick::spec() masks readr::spec()
 ✖ recipes::step()   masks stats::step()
-• Dig deeper into tidy modeling with R at https://www.tmwr.org</code></pre>
+• Search for functions across packages at https://www.tidymodels.org/find/</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(powerjoin)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
@@ -5172,30 +5172,29 @@ Attaching package: &#39;xgboost&#39;</code></pre>
 → C | warning: ! 5 columns were requested but there were 2 predictors in the data.
                ℹ 2 predictors will be used.
 There were issues with some computations   A: x1
-There were issues with some computations   A: x2   B: x1   C: x1
-There were issues with some computations   A: x4   B: x4   C: x4
-There were issues with some computations   A: x6   B: x6   C: x6
-There were issues with some computations   A: x8   B: x8   C: x8
+There were issues with some computations   A: x1   B: x1   C: x1
+There were issues with some computations   A: x4   B: x3   C: x3
+There were issues with some computations   A: x6   B: x5   C: x5
+There were issues with some computations   A: x8   B: x8   C: x7
 There were issues with some computations   A: x11   B: x10   C: x10
 There were issues with some computations   A: x13   B: x12   C: x12
 There were issues with some computations   A: x15   B: x15   C: x14
 There were issues with some computations   A: x17   B: x17   C: x16
-There were issues with some computations   A: x19   B: x19   C: x18
-There were issues with some computations   A: x21   B: x21   C: x20
-There were issues with some computations   A: x23   B: x22   C: x22
-There were issues with some computations   A: x25   B: x25   C: x24
-There were issues with some computations   A: x27   B: x26   C: x26
-There were issues with some computations   A: x29   B: x28   C: x28
-There were issues with some computations   A: x31   B: x31   C: x30
-There were issues with some computations   A: x33   B: x33   C: x32
-There were issues with some computations   A: x35   B: x35   C: x35
+There were issues with some computations   A: x20   B: x19   C: x19
+There were issues with some computations   A: x22   B: x21   C: x21
+There were issues with some computations   A: x24   B: x23   C: x23
+There were issues with some computations   A: x26   B: x26   C: x25
+There were issues with some computations   A: x28   B: x28   C: x27
+There were issues with some computations   A: x31   B: x30   C: x30
+There were issues with some computations   A: x33   B: x32   C: x32
+There were issues with some computations   A: x35   B: x34   C: x34
 There were issues with some computations   A: x37   B: x36   C: x36
 There were issues with some computations   A: x39   B: x39   C: x38
 There were issues with some computations   A: x41   B: x41   C: x40
 There were issues with some computations   A: x43   B: x43   C: x42
 There were issues with some computations   A: x46   B: x45   C: x45
-There were issues with some computations   A: x47   B: x47   C: x46
-There were issues with some computations   A: x49   B: x49   C: x49
+There were issues with some computations   A: x48   B: x47   C: x47
+There were issues with some computations   A: x50   B: x49   C: x49
 There were issues with some computations   A: x50   B: x50   C: x50</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(rf_tune_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5358,39 +5357,36 @@ Computational engine: ranger </code></pre>
 <pre><code>There were issues with some computations   A: x1</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>There were issues with some computations   A: x3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
 <pre><code>→ B | warning: ! 4 columns were requested but there were 2 predictors in the data.
                ℹ 2 predictors will be used.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>There were issues with some computations   A: x3
+<pre><code>There were issues with some computations   A: x1
+There were issues with some computations   A: x5   B: x3
 → C | warning: ! 5 columns were requested but there were 2 predictors in the data.
                ℹ 2 predictors will be used.
-There were issues with some computations   A: x3
+There were issues with some computations   A: x5   B: x3
 There were issues with some computations   A: x6   B: x5   C: x5
-There were issues with some computations   A: x10   B: x5   C: x5
-There were issues with some computations   A: x11   B: x10   C: x10
-There were issues with some computations   A: x15   B: x12   C: x10
-There were issues with some computations   A: x16   B: x15   C: x15
-There were issues with some computations   A: x20   B: x18   C: x15
+There were issues with some computations   A: x10   B: x10   C: x6
+There were issues with some computations   A: x12   B: x10   C: x10
+There were issues with some computations   A: x15   B: x15   C: x14
+There were issues with some computations   A: x19   B: x15   C: x15
 There were issues with some computations   A: x21   B: x20   C: x20
-There were issues with some computations   A: x25   B: x25   C: x20
+There were issues with some computations   A: x25   B: x22   C: x20
 There were issues with some computations   A: x26   B: x25   C: x25
-There were issues with some computations   A: x30   B: x30   C: x27
+There were issues with some computations   A: x30   B: x30   C: x25
 There were issues with some computations   A: x31   B: x30   C: x30
 There were issues with some computations   A: x35   B: x35   C: x33
 There were issues with some computations   A: x38   B: x35   C: x35
-There were issues with some computations   A: x40   B: x40   C: x40
+There were issues with some computations   A: x41   B: x40   C: x40
 There were issues with some computations   A: x44   B: x40   C: x40
-There were issues with some computations   A: x45   B: x45   C: x45
-There were issues with some computations   A: x50   B: x45   C: x45
+There were issues with some computations   A: x46   B: x45   C: x45
+There were issues with some computations   A: x50   B: x46   C: x45
 There were issues with some computations   A: x50   B: x50   C: x50</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(model_params)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(model_params)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -5403,7 +5399,7 @@ There were issues with some computations   A: x50   B: x50   C: x50</code></pre>
 <h1>I can see six different graphs, one shows the rmse, rsq, and mae with randomly selected predictors and minimal node size as the x-axis. mae and rmse are failry similar with no outliers which is what we’re looking for. proving that the model was a good choice because of less outliers and consistancy.</h1>
 <p>#Check the skill of the tuned model</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>model_params <span class="sc">%&gt;%</span> <span class="fu">collect_metrics</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>model_params <span class="sc">%&gt;%</span> <span class="fu">collect_metrics</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 75 × 8
     mtry min_n .metric .estimator  mean     n std_err .config              
@@ -5420,8 +5416,8 @@ There were issues with some computations   A: x50   B: x50   C: x50</code></pre>
 10     1     5 mae     standard   0.320    10  0.0170 Preprocessor1_Model04
 # ℹ 65 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>model_params <span class="sc">%&gt;%</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">show_best</span>(<span class="at">metric =</span> <span class="st">&quot;mae&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>model_params <span class="sc">%&gt;%</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">show_best</span>(<span class="at">metric =</span> <span class="st">&quot;mae&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 8
    mtry min_n .metric .estimator  mean     n std_err .config              
@@ -5432,9 +5428,9 @@ There were issues with some computations   A: x50   B: x50   C: x50</code></pre>
 4     2    11 mae     standard   0.322    10  0.0156 Preprocessor1_Model08
 5     1    19 mae     standard   0.323    10  0.0154 Preprocessor1_Model05</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>hp_best <span class="ot">&lt;-</span> <span class="fu">select_best</span>(model_params, <span class="at">metric =</span> <span class="st">&quot;mae&quot;</span>)</span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>hp_best</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>hp_best <span class="ot">&lt;-</span> <span class="fu">select_best</span>(model_params, <span class="at">metric =</span> <span class="st">&quot;mae&quot;</span>)</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>hp_best</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
    mtry min_n .config              
@@ -5447,9 +5443,9 @@ There were issues with some computations   A: x50   B: x50   C: x50</code></pre>
 <h1>the first row shows the best performing model has a mtry = 5 and a min_n = 22, meaning the model selected 5 random predictors and needed 10 data points to split a node, with an average mean of 0.312 and our predictions are off by that much. lower means leads to a better performing model.</h1>
 <p>#finalized model</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>final_workflow <span class="ot">&lt;-</span> <span class="fu">finalize_workflow</span>(rf_workflow, hp_best)</span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(final_workflow)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>final_workflow <span class="ot">&lt;-</span> <span class="fu">finalize_workflow</span>(rf_workflow, hp_best)</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(final_workflow)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>══ Workflow ════════════════════════════════════════════════════════════════════
 Preprocessor: Recipe
@@ -5470,10 +5466,10 @@ Main Arguments:
 
 Computational engine: ranger </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>final_fit <span class="ot">&lt;-</span> <span class="fu">last_fit</span>(final_workflow, camels_split)</span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>final_metrics <span class="ot">&lt;-</span> <span class="fu">collect_metrics</span>(final_fit)</span>
-<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>final_metrics</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>final_fit <span class="ot">&lt;-</span> <span class="fu">last_fit</span>(final_workflow, camels_split)</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>final_metrics <span class="ot">&lt;-</span> <span class="fu">collect_metrics</span>(final_fit)</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>final_metrics</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 4
   .metric .estimator .estimate .config             
@@ -5486,8 +5482,8 @@ Computational engine: ranger </code></pre>
 <section id="the-results-show-a-dinal-rmse-of-0.401-and-a-rsq-of-0.920.-lower-rmse-means-that-the-predicted-values-are-close-to-actual-values-and-a-high-rsq-means-that-92-of-varablitly-in-the-test-data-these-are-great-results-showing-a-strong-model-choice." class="level1">
 <h1>the results show a dinal rmse of 0.401 and a rsq of 0.920. Lower rmse means that the predicted values are close to actual values and a high rsq means that 92% of varablitly in the test data, these are great results showing a strong model choice.</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>final_predictions <span class="ot">&lt;-</span> <span class="fu">collect_predictions</span>(final_fit)</span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>final_predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>final_predictions <span class="ot">&lt;-</span> <span class="fu">collect_predictions</span>(final_fit)</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>final_predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 134 × 5
    .pred id                .row q_mean .config             
@@ -5506,20 +5502,20 @@ Computational engine: ranger </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(final_predictions, <span class="fu">aes</span>(<span class="at">x =</span> .pred, <span class="at">y =</span> q_mean)) <span class="sc">+</span></span>
-<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;purple&quot;</span>), <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">color =</span> <span class="st">&quot;pink&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>, <span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb84-8"><a href="#cb84-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb84-9"><a href="#cb84-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Predicted vs Actual Values&quot;</span>,</span>
-<span id="cb84-10"><a href="#cb84-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Predicted Streamflow (q_mean)&quot;</span>,</span>
-<span id="cb84-11"><a href="#cb84-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Actual Streamflow (q_mean)&quot;</span>,</span>
-<span id="cb84-12"><a href="#cb84-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Red line: Linear fit&quot;</span></span>
-<span id="cb84-13"><a href="#cb84-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb84-14"><a href="#cb84-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(final_predictions, <span class="fu">aes</span>(<span class="at">x =</span> .pred, <span class="at">y =</span> q_mean)) <span class="sc">+</span></span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;purple&quot;</span>), <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">color =</span> <span class="st">&quot;pink&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>, <span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb83-7"><a href="#cb83-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb83-8"><a href="#cb83-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb83-9"><a href="#cb83-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Predicted vs Actual Values&quot;</span>,</span>
+<span id="cb83-10"><a href="#cb83-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Predicted Streamflow (q_mean)&quot;</span>,</span>
+<span id="cb83-11"><a href="#cb83-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Actual Streamflow (q_mean)&quot;</span>,</span>
+<span id="cb83-12"><a href="#cb83-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Red line: Linear fit&quot;</span></span>
+<span id="cb83-13"><a href="#cb83-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb83-14"><a href="#cb83-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
 </div>
@@ -5533,13 +5529,13 @@ Computational engine: ranger </code></pre>
 </div>
 <p>#map building</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>final_model <span class="ot">&lt;-</span> <span class="fu">fit</span>(final_workflow, <span class="at">data =</span> camels_clean2)</span>
-<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">augment</span>(final_model, camels_clean2)</span>
-<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> predictions <span class="sc">%&gt;%</span></span>
-<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">residuals =</span> .pred <span class="sc">-</span> q_mean)</span>
-<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(predictions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>final_model <span class="ot">&lt;-</span> <span class="fu">fit</span>(final_workflow, <span class="at">data =</span> camels_clean2)</span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">augment</span>(final_model, camels_clean2)</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> predictions <span class="sc">%&gt;%</span></span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">residuals =</span> .pred <span class="sc">-</span> q_mean)</span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(predictions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
   .pred aridity p_mean q_mean gauge_lat gauge_lon residuals
@@ -5554,17 +5550,17 @@ Computational engine: ranger </code></pre>
 </div>
 <p>#predicted map</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
-<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>pred_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(predictions, <span class="fu">aes</span>(<span class="at">x =</span> gauge_lon, <span class="at">y =</span> gauge_lat, <span class="at">color =</span> .pred)) <span class="sc">+</span> <span class="fu">borders</span>(<span class="st">&quot;state&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb88-6"><a href="#cb88-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;C&quot;</span>) <span class="sc">+</span></span>
-<span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Predicted Streamflow (q_mean)&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Predicted Value&quot;</span>) <span class="sc">+</span></span>
-<span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb88-9"><a href="#cb88-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
-<span id="cb88-10"><a href="#cb88-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb88-11"><a href="#cb88-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pred_map)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>pred_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(predictions, <span class="fu">aes</span>(<span class="at">x =</span> gauge_lon, <span class="at">y =</span> gauge_lat, <span class="at">color =</span> .pred)) <span class="sc">+</span> <span class="fu">borders</span>(<span class="st">&quot;state&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;C&quot;</span>) <span class="sc">+</span></span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Predicted Streamflow (q_mean)&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Predicted Value&quot;</span>) <span class="sc">+</span></span>
+<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb87-9"><a href="#cb87-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
+<span id="cb87-10"><a href="#cb87-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-11"><a href="#cb87-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pred_map)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -5575,14 +5571,14 @@ Computational engine: ranger </code></pre>
 </div>
 <p>#residual map</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>resid_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(predictions, <span class="fu">aes</span>(<span class="at">x =</span> gauge_lon, <span class="at">y =</span> gauge_lat, <span class="at">color =</span> residuals)) <span class="sc">+</span> <span class="fu">borders</span>(<span class="st">&quot;state&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;C&quot;</span>) <span class="sc">+</span></span>
-<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Residuals of Predictions (Predicted - Actual)&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Residuals&quot;</span>) <span class="sc">+</span></span>
-<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
-<span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resid_map)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>resid_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(predictions, <span class="fu">aes</span>(<span class="at">x =</span> gauge_lon, <span class="at">y =</span> gauge_lat, <span class="at">color =</span> residuals)) <span class="sc">+</span> <span class="fu">borders</span>(<span class="st">&quot;state&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;C&quot;</span>) <span class="sc">+</span></span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Residuals of Predictions (Predicted - Actual)&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Residuals&quot;</span>) <span class="sc">+</span></span>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb88-6"><a href="#cb88-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
+<span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resid_map)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -5593,12 +5589,12 @@ Computational engine: ranger </code></pre>
 </div>
 <p>#combined maps</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a>combined_map <span class="ot">&lt;-</span> pred_map <span class="sc">+</span> resid_map <span class="sc">+</span></span>
-<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
-<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(combined_map)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>combined_map <span class="ot">&lt;-</span> pred_map <span class="sc">+</span> resid_map <span class="sc">+</span></span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(combined_map)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
